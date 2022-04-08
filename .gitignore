@@ -42,3 +42,4 @@ out/
 ### environment ###
 .env
 .env.prod
+src/main/resources/application-local.yml
