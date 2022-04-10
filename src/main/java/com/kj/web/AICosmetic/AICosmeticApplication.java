@@ -10,8 +10,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequiredArgsConstructor
 public class AICosmeticApplication {
-	private final TestRepository testRepository;
-
 	@GetMapping("/")
 	public String hello() {
 		return "Hello World!";

@@ -3,10 +3,9 @@ package com.kj.web.AICosmetic.domain;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Getter@Setter
@@ -16,7 +15,11 @@ public class Product {
     @Column(name = "product_id")
     private Long id;
 
+    @Column(name = "product_name")
     private String name;
+
+    @OneToMany(mappedBy = "product")
+    private List<Sale> sales = new ArrayList<>();
 
 
 }
