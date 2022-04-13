@@ -13,7 +13,7 @@ import static javax.persistence.FetchType.LAZY;
 @Getter@Setter
 public class Sale {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "sale_id", nullable = false)
     private Long id;
 
