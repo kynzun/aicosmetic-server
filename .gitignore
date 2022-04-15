@@ -42,4 +42,7 @@ out/
 ### environment ###
 .env
 .env.prod
+
+### local ###
 src/main/resources/application-local.yml
+src/main/java/com/kj/web/AICosmetic/InitDb.java
