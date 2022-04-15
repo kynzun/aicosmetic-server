@@ -29,7 +29,7 @@ public class ProductApiController {
         return new Result(collect);
     }
 
-    @GetMapping("/api/product/{id}")
+    @GetMapping("/api/products/{id}")
     public ProductResponse getProduct(@PathVariable("id") Long id) {
         Product product = productService.findProduct(id);
         return new ProductResponse(product);
