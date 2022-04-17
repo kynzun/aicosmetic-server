@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,6 +18,12 @@ public class Product {
 
     @Column(name = "product_name")
     private String name;
+
+    private Long original_price;
+    private Long current_price;
+
+    private LocalDate predict_from;
+    private LocalDate predict_to;
 
     @OneToMany(mappedBy = "product")
     private List<Sale> sales = new ArrayList<>();

@@ -14,6 +14,7 @@ public class SaleApiController {
     @Data
     @AllArgsConstructor
     static class SaleResponse{
+        private Long discountRate;
         private LocalDate startDate;
         private LocalDate endDate;
     }

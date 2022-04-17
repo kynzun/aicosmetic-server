@@ -23,9 +23,9 @@ public class SaleService {
      * 세일정보 기록
      **/
     @Transactional
-    public Long recordSale(Long productId, LocalDate startDate, LocalDate endDate) {
+    public Long recordSale(Long productId, Long discountRate, LocalDate startDate, LocalDate endDate) {
         Product product = productRepository.findById(productId);
-        Sale sale = Sale.createSale(product, startDate, endDate);
+        Sale sale = Sale.createSale(product, discountRate, startDate, endDate);
         saleRepository.save(sale);
         return sale.getId();
     }

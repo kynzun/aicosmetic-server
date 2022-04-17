@@ -10,7 +10,8 @@ import java.time.LocalDate;
 import static javax.persistence.FetchType.LAZY;
 
 @Entity
-@Getter@Setter
+@Getter
+@Setter
 public class Sale {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,8 +21,8 @@ public class Sale {
     @ManyToOne(fetch = LAZY)
     private Product product;
 
+    private Long discountRate;
     private LocalDate startDate;
-
     private LocalDate endDate;
 
     //==연관관계 메서드==//
@@ -31,9 +32,10 @@ public class Sale {
     }
 
     //==생성 메서드==//
-    public static Sale createSale(Product product, LocalDate startDate, LocalDate endDate) {
+    public static Sale createSale(Product product, Long discountRate, LocalDate startDate, LocalDate endDate) {
         Sale sale = new Sale();
         sale.setProduct(product);
+        sale.setDiscountRate(discountRate);
         sale.setStartDate(startDate);
         sale.setEndDate(endDate);
         return sale;
