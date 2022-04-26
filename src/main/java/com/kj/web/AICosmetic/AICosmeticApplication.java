@@ -36,7 +36,7 @@ public class AICosmeticApplication {
 		return new WebMvcConfigurer() {
 			@Override
 			public void addCorsMappings(CorsRegistry registry) {
-				registry.addMapping("/**").allowedOrigins("http://0.0.0.0");
+				registry.addMapping("/**");
 			}
 		};
 	}
